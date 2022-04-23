@@ -1,9 +1,11 @@
 # Almighty Simple Deploy
 A shortcut to set a remote git project that update instantly when receiving
-a push
+a push.
+Idea and learning taken from:
+http://ryanflorence.com/deploying-websites-with-a-tiny-git-hook/
 
 ## Setup
-###In your server
+### In your server
 Create the root directory for the project:
 
     sudo mkdir /var/www/mywebsite
@@ -24,15 +26,15 @@ Run the installation script found inside deploy directory:
 
     ./install.sh
 
-###In your local environment.
-Clone the repository from your server:
+It will ask if you want to clean the files and repository of this project
+leaving a totally clean project ready for your first commit. 
 
-    git clone [git@<serverusername>@<serverip>:<sshport>]:</full/path/to/root/website/directory>
+### In your local environment.
+Clone the repository from your server into your projects folder:
 
-Now, if everything has gone fine, always when you make a push it will go directly to your server.
-All the results of this commands resides inside the hooks directory of the .git
-directory of your project, so you can delete the files of this project and
-start yours.
+    git clone ssh://<user>@<serverip>:<sshport></full/path/to/root/website/directory>
+
+Now, if everything has gone fine, when you make a push it will always go directly to your server.
  
 Alternatively you can set the remote server as remote production (for example) instead of origin:
 
