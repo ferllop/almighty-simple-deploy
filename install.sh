@@ -1,12 +1,13 @@
 #!/bin/sh
-THIS_FILENAME=install.sh
-GIT_HOOK_FILE=post-receive-git-hook
+GIT_OK="Now this git repository accepts remote pushes into current branch"
+GIT_NOT_OK="There was some error configuring this git repository to accept
+remote pushes into current branch"
 
-git config receive.denyCurrentBranch updateInstead
-cp $GIT_HOOK_FILE .git/hooks/post-receive
+HOOK_OK="Hook installed"
+HOOK_NOT_OK="There was some problem installing the git hook"
 
-if [ "$1" = "--remove-after" ]; then
-    rm $GIT_HOOK_FILE
-    rm $THIS_FILENAME
-fi
+git config receive.denyCurrentBranch updateInstead && echo $GIT_OK || echo $GIT_NOT_OK
+cp post-receive-git-hook .git/hooks/post-receive && echo $HOOK_OK || echo $HOOK_NOT_OK
+
+echo "Done."
 
