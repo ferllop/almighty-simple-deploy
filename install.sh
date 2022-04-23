@@ -3,7 +3,7 @@
 reinitialize(){
     rm -rf .gitignore post-receive-git-hook install.sh README.md
     git update-ref -d HEAD
-    git rm --cached *
+    git rm --cached .gitignore post-receive-git-hook install.sh README.md
     git remote remove origin
     echo "Git project cleaned"
 }
