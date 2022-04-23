@@ -49,3 +49,7 @@ In this manner, always that you do a regular push you will be pushing to gitlab 
  
     git push production main 
 
+## Your own hook
+The git hook that this script installs, also leaves a hook for you.
+You have to put a script with name **git-post-receive-hook.sh** inside a directory named **deploy** of your root project folder.
+If you want to change some of this names you can do it in post-receive-git-hook file of this project.
