@@ -4,23 +4,25 @@ a push
 
 ## Setup
 ###In your server
-create the root directory for the project:
+Create the root directory for the project:
 
     sudo mkdir /var/www/mywebsite
 
-with the proper user permissions to write there:
+With the proper ssh user permissions to write there:
 
     sudo chown -R <user>:<group> /var/www/mywebsite
 
-inside the project folder clone this repository:
+Go into your project directory:
 
     cd /var/www/mywebsite
-    git clone git@github.com:ferllop/almighty-simple-deploy.git . #Do not forget the dot!
 
-Now run the installation script found inside deploy directory:
+Clone this repository:
+
+    git clone https://github.com/ferllop/almighty-simple-deploy.git . #Do not forget the dot!
+
+Run the installation script found inside deploy directory:
 
     ./install.sh
-
 
 ###In your local environment.
 Clone the repository from your server:
@@ -28,6 +30,9 @@ Clone the repository from your server:
     git clone [git@<serverusername>@<serverip>:<sshport>]:</full/path/to/root/website/directory>
 
 Now, if everything has gone fine, always when you make a push it will go directly to your server.
+All the results of this commands resides inside the hooks directory of the .git
+directory of your project, so you can delete the files of this project and
+start yours.
  
 Alternatively you can set the remote server as remote production (for example) instead of origin:
 
