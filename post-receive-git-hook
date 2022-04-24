@@ -3,7 +3,7 @@ cd ..
 GIT_DIR='.git'
 umask 002 && git reset --hard
 
-if [ -d "./deploy" ] && [ -f "./deploy/git-post-receive-hook.sh" ]; then
+if [ -d "./deploy" ] && [ -f "./deploy/deploy.sh" ]; then
   cd deploy
-  ./git-post-receive-hook.sh
+  ./deploy.sh
 fi
